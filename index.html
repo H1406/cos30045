@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Energy Consumption - Home</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="top-nav">
+        <div class="logo-container">
+            <a href="#" onclick="showPage('home'); return false;">
+                <img src="PowerIcon.png" alt="Power Logo" class="logo">
+            </a>
+        </div>
+        <ul class="nav-menu">
+            <li><a href="#" onclick="showPage('home'); return false;" class="nav-link active" data-page="home">Home</a></li>
+            <li><a href="#" onclick="showPage('televisions'); return false;" class="nav-link" data-page="televisions">Televisions</a></li>
+            <li><a href="#" onclick="showPage('about'); return false;" class="nav-link" data-page="about">About Us</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <div id="home-page" class="page active">
+            <h1>Welcome to Energy Consumption Australia</h1>
+            <p>Understanding and managing energy consumption is crucial for Australian households and businesses. With rising electricity costs and environmental concerns, making informed decisions about appliance usage can lead to significant savings and reduced carbon footprint.</p>
+            
+            <section class="energy-info">
+                <h2>Why Energy Efficiency Matters</h2>
+                <p>The average Australian household spends over $2,000 annually on electricity. By choosing energy-efficient appliances and understanding consumption patterns, you can reduce costs while contributing to a sustainable future.</p>
+                
+                <h3>Key Energy Statistics</h3>
+                <ul>
+                    <li>Heating and cooling account for 40% of household energy use</li>
+                    <li>Hot water systems contribute approximately 25% of energy consumption</li>
+                    <li>Appliances and electronics make up about 35% of household energy use</li>
+                </ul>
+            </section>
+
+            <section class="tips">
+                <h2>Energy Saving Tips</h2>
+                <div class="tips-grid">
+                    <div class="tip-card">
+                        <h3>Choose Wisely</h3>
+                        <p>Look for appliances with high energy star ratings when purchasing new equipment.</p>
+                    </div>
+                    <div class="tip-card">
+                        <h3>Maintain Regularly</h3>
+                        <p>Regular maintenance of appliances ensures they run efficiently and consume less power.</p>
+                    </div>
+                    <div class="tip-card">
+                        <h3>Monitor Usage</h3>
+                        <p>Track your energy consumption to identify areas where you can reduce usage.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div id="televisions-page" class="page">
+            <h1>Television Energy Consumption</h1>
+            <p>Televisions are one of the most common household appliances in Australia, with most homes having multiple units. Understanding their energy consumption can help you make informed purchasing decisions.</p>
+
+            <section class="tv-info">
+                <h2>Television Types and Energy Use</h2>
+                
+                <div class="tv-type">
+                    <h3>LED/LCD Televisions</h3>
+                    <p>Modern LED and LCD TVs are the most energy-efficient option available. A typical 55-inch LED TV consumes between 60-100 watts during operation, costing approximately $30-50 per year based on average Australian electricity rates.</p>
+                </div>
+
+                <div class="tv-type">
+                    <h3>OLED Televisions</h3>
+                    <p>OLED TVs offer superior picture quality but generally consume more power than LED models. A 55-inch OLED typically uses 90-130 watts, with annual costs ranging from $45-65.</p>
+                </div>
+
+                <div class="tv-type">
+                    <h3>Plasma Televisions</h3>
+                    <p>Older plasma TVs are the least efficient, consuming 200-400 watts for a 50-inch model. These can cost $100-200 annually to run and should be considered for replacement.</p>
+                </div>
+            </section>
+
+            <section class="tv-tips">
+                <h2>Reducing TV Energy Consumption</h2>
+                <ul>
+                    <li>Adjust brightness settings - factory settings are often unnecessarily high</li>
+                    <li>Enable power-saving modes available in most modern TVs</li>
+                    <li>Turn off completely rather than leaving on standby (standby can use 1-5 watts)</li>
+                    <li>Consider screen size - larger screens consume more power</li>
+                    <li>Check energy star ratings when purchasing new televisions</li>
+                </ul>
+            </section>
+        </div>
+
+        <div id="about-page" class="page">
+            <h1>About Us</h1>
+            <p>Energy Consumption Australia is dedicated to helping Australian households and businesses understand and optimize their energy usage. Our mission is to provide accessible information about appliance energy consumption to empower consumers to make informed decisions.</p>
+
+            <section class="mission">
+                <h2>Our Mission</h2>
+                <p>We believe that knowledge is power—especially when it comes to power consumption. By providing clear, accurate information about how much energy different appliances use, we help Australians:</p>
+                <ul>
+                    <li>Reduce their electricity bills</li>
+                    <li>Make environmentally conscious purchasing decisions</li>
+                    <li>Understand the true cost of running household appliances</li>
+                    <li>Contribute to a more sustainable future</li>
+                </ul>
+            </section>
+
+            <section class="resources">
+                <h2>Resources and Information</h2>
+                <p>Our information is sourced from Australian energy authorities, manufacturer specifications, and independent testing. We regularly update our content to reflect the latest appliance technologies and energy efficiency standards.</p>
+                <p>All energy cost estimates are based on average Australian electricity rates, which vary by state and provider. Check with your energy retailer for specific rates in your area.</p>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Hieu Phan | Content and code generated with assistance from GenAI (Claude)</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
