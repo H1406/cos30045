@@ -60,25 +60,6 @@
             <h1>Television Energy Consumption</h1>
             <p>Televisions are one of the most common household appliances in Australia, with most homes having multiple units. Understanding their energy consumption can help you make informed purchasing decisions.</p>
 
-            <section class="tv-info">
-                <h2>Television Types and Energy Use</h2>
-                
-                <div class="tv-type">
-                    <h3>LED/LCD Televisions</h3>
-                    <p>Modern LED and LCD TVs are the most energy-efficient option available. A typical 55-inch LED TV consumes between 60-100 watts during operation, costing approximately $30-50 per year based on average Australian electricity rates.</p>
-                </div>
-
-                <div class="tv-type">
-                    <h3>OLED Televisions</h3>
-                    <p>OLED TVs offer superior picture quality but generally consume more power than LED models. A 55-inch OLED typically uses 90-130 watts, with annual costs ranging from $45-65.</p>
-                </div>
-
-                <div class="tv-type">
-                    <h3>Plasma Televisions</h3>
-                    <p>Older plasma TVs are the least efficient, consuming 200-400 watts for a 50-inch model. These can cost $100-200 annually to run and should be considered for replacement.</p>
-                </div>
-            </section>
-
             <section class="tv-tips">
                 <h2>Reducing TV Energy Consumption</h2>
                 <ul>
@@ -88,7 +69,66 @@
                     <li>Consider screen size - larger screens consume more power</li>
                     <li>Check energy star ratings when purchasing new televisions</li>
                 </ul>
+            </section> 
+            <section class="tv-info">
+                <h2>Understanding Television Energy Consumption</h2>
+                <p>
+                    This section uses official Australian television energy rating data to explore
+                    how different television characteristics influence annual energy consumption.
+                    The visualisations focus on factors that matter most to consumers, including
+                    screen size, display technology, and brand-level efficiency.
+                </p>
+
+                <!-- VISUALISATION 1 -->
+                <div class="viz-section">
+                    <h3>Visualisation 1: Screen Size vs Energy Consumption</h3>
+                    <p class="viz-context">
+                        This scatter plot illustrates the relationship between television screen size
+                        (in inches) and annual energy consumption (kWh/year). While energy usage
+                        generally increases with screen size, the plot shows considerable variation,
+                        indicating that energy efficiency differs significantly between models.
+                    </p>
+
+                    <img 
+                        src="energy_size.png" 
+                        alt="Scatter plot showing the relationship between television screen size and annual energy consumption"
+                        class="viz-image">
+                </div>
+
+                <!-- VISUALISATION 2 -->
+                <div class="viz-section">
+                    <h3>Visualisation 2: Average Energy Consumption by Screen Technology</h3>
+                    <p class="viz-context">
+                        This bar chart compares the average annual energy consumption of televisions
+                        based on screen technology, such as LED/LCD, OLED, and Plasma. The visualisation
+                        highlights how advances in display technology have contributed to improved
+                        energy efficiency in modern televisions.
+                    </p>
+
+                    <img 
+                        src="energy_tech.png" 
+                        alt="Bar chart comparing average annual energy consumption across different television screen technologies"
+                        class="viz-image">
+                </div>
+
+                <!-- VISUALISATION 3 -->
+                <div class="viz-section">
+                    <h3>Visualisation 3: Average Energy Consumption by Brand</h3>
+                    <p class="viz-context">
+                        This bar chart presents the average annual energy consumption of television
+                        models grouped by brand available in the Australian market. It allows consumers
+                        to observe differences in typical energy performance across manufacturers,
+                        while recognising that efficiency can still vary between individual models.
+                    </p>
+
+                    <img 
+                        src="energy_brand.png" 
+                        alt="Bar chart showing average annual television energy consumption by brand in Australia"
+                        class="viz-image">
+                </div>
             </section>
+
+
         </div>
 
         <div id="about-page" class="page">
@@ -115,7 +155,7 @@
     </main>
 
     <footer>
-        <p>&copy; 2026 Hieu Phan | Content and code generated with assistance from GenAI (Claude)</p>
+        <p>&copy; 2026 Hieu Phan | Content and code generated with assistance from GenAI (Claude and ChatGPT)</p>
     </footer>
 
     <script src="script.js"></script>
