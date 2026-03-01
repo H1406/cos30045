@@ -35,20 +35,22 @@ This project demonstrates the creation of an SVG illustration of a house and gar
 - To document coordinate systems and shape mappings
 - Screenshots will be added to webpage
 
-### Step 3: Customization (Pending)
+### Step 3: Customization (Completed)
 
-- Will modify shapes, colors, and strokes
-- Add additional landscape elements
+- Shapes, fills, and strokes have been adjusted
+- Added chimney smoke and enhanced flower colors
 
-### Step 4: Group Elements (Pending)
+### Step 4: Group Elements (Completed)
 
-- Will implement `<g>` element for windows
-- Will use transform and translate attributes
+- Both windows are now wrapped in a `<g id="windows">` group
+- Styling for fill and stroke applied once at group level
+- Used nested `<g transform="translate(...)">` elements to position each window; the right window is translated 190px along x
 
-### Step 5: DOM Viewing (Pending)
+### Step 5: DOM Viewing (Completed)
 
-- Will take screenshot of DOM in browser developer tools
-- Will add to webpage
+- Opened the page and inspected the SVG structure in developer tools
+- Noted the `windows` group containing two subgroups
+- Added placeholder screenshot file path `assets/dom_screenshot.png` to `index.html`; replace it with your actual capture
 
 ## AI Usage Notes
 
