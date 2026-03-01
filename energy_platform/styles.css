@@ -296,3 +296,10 @@ img{
     width: 100%;
     height: 100%;
 }
+
+.responsive-svg-container {
+    margin-right: auto;
+    margin-left: auto;
+    width: 100%;
+    max-width: 1200px;
+}
