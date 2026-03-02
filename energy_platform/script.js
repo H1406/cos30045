@@ -11,6 +11,15 @@ svg
     .attr("width", 414)
     .attr("height", 16)
     .attr("fill", "blue");
+
+d3. csv('data.csv', d=>{
+    return{
+        brand:d.Brand_Reg,
+        count: +d.count
+    };
+}).then (data=>{
+    console.log(data);
+})
 // Function to show the selected page and hide others
 function showPage(pageName) {
     // Hide all pages
