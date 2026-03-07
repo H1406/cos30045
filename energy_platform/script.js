@@ -1,6 +1,6 @@
 const svg = d3.select(".responsive-svg-container")
     .append("svg")
-      .attr("viewBox", "0 0 1200 1600")
+      .attr("viewBox", "0 0 500 1600")
       .style("border", "1px solid black");
 
 // test rectangle to verify canvas scaling and positioning
@@ -25,20 +25,32 @@ d3.csv('data.csv', d => {
 
 const createBarChart = data => {
 
-    const barHeight = 25;
-    const barSpacing = 5;
-    const leftMargin = 50;
+    const svgWidth = 500;
+    const svgHeight = 1600;
+    const leftMargin = 20;
+    const rightMargin = 20;
+
+    // Linear scale for numeric values
+    const xScale = d3.scaleLinear()
+        .domain([0, d3.max(data, d => d.count)])
+        .range([0, svgWidth - leftMargin - rightMargin]); 
+
+    // Band scale for categorical values
+    const yScale = d3.scaleBand()
+        .domain(data.map(d => d.brand))
+        .range([0, svgHeight])
+        .padding(0.1);   // creates gap between bars
 
     svg
-        .selectAll("rect")
-        .data(data)
-        .join("rect")
-        .attr("class", d => `bar bar-${d.count}`)
-        .attr("x", leftMargin)
-        .attr("y", (d, i) => i * (barHeight + barSpacing))
-        .attr("width", d => d.count)
-        .attr("height", barHeight)
-        .attr("fill", "steelblue");
+      .selectAll("rect")
+      .data(data)
+      .join("rect")
+      .attr("class", d => `bar bar-${d.count}`)
+      .attr("x", leftMargin)
+      .attr("y", d => yScale(d.brand))
+      .attr("width", d => xScale(d.count))
+      .attr("height", yScale.bandwidth())
+      .attr("fill", "steelblue");
 };
 // Function to show the selected page and hide others
 function showPage(pageName) {
