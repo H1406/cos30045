@@ -4,22 +4,42 @@ const svg = d3.select(".responsive-svg-container")
       .style("border", "1px solid black");
 
 // test rectangle to verify canvas scaling and positioning
-svg
-  .append("rect")
-    .attr("x", 10)
-    .attr("y", 10)
-    .attr("width", 414)
-    .attr("height", 16)
-    .attr("fill", "blue");
+// svg
+//   .append("rect")
+//     .attr("x", 10)
+//     .attr("y", 10)
+//     .attr("width", 414)
+//     .attr("height", 16)
+//     .attr("fill", "blue");
 
-d3. csv('data.csv', d=>{
-    return{
-        brand:d.Brand_Reg,
+d3.csv('data.csv', d => {
+    return {
+        brand: d.Brand_Reg,
         count: +d.count
     };
-}).then (data=>{
+}).then(data => {
+    data.sort((a, b) => b.count - a.count);
     console.log(data);
-})
+    createBarChart(data);
+});
+
+const createBarChart = data => {
+
+    const barHeight = 25;
+    const barSpacing = 5;
+    const leftMargin = 50;
+
+    svg
+        .selectAll("rect")
+        .data(data)
+        .join("rect")
+        .attr("class", d => `bar bar-${d.count}`)
+        .attr("x", leftMargin)
+        .attr("y", (d, i) => i * (barHeight + barSpacing))
+        .attr("width", d => d.count)
+        .attr("height", barHeight)
+        .attr("fill", "steelblue");
+};
 // Function to show the selected page and hide others
 function showPage(pageName) {
     // Hide all pages
