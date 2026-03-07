@@ -12,7 +12,7 @@ const svg = d3.select(".responsive-svg-container")
 //     .attr("height", 16)
 //     .attr("fill", "blue");
 
-d3.csv('data.csv', d => {
+d3.csv('data/data.csv', d => {
     return {
         brand: d.Brand_Reg,
         count: +d.count
@@ -27,31 +27,57 @@ const createBarChart = data => {
 
     const svgWidth = 500;
     const svgHeight = 1600;
-    const leftMargin = 20;
-    const rightMargin = 20;
+    const labelOffset = data.reduce((max, d) => Math.max(max, d.brand.length), 0) * 6.5; 
+    const rightMargin = 35;
 
-    // Linear scale for numeric values
+    // X scale (numerical)
     const xScale = d3.scaleLinear()
         .domain([0, d3.max(data, d => d.count)])
-        .range([0, svgWidth - leftMargin - rightMargin]); 
+        .range([0, svgWidth - labelOffset - rightMargin ]);
 
-    // Band scale for categorical values
+    // Y scale (categorical)
     const yScale = d3.scaleBand()
         .domain(data.map(d => d.brand))
         .range([0, svgHeight])
-        .padding(0.1);   // creates gap between bars
+        .padding(0.1);
 
-    svg
-      .selectAll("rect")
-      .data(data)
-      .join("rect")
-      .attr("class", d => `bar bar-${d.count}`)
-      .attr("x", leftMargin)
-      .attr("y", d => yScale(d.brand))
-      .attr("width", d => xScale(d.count))
-      .attr("height", yScale.bandwidth())
-      .attr("fill", "steelblue");
+    // Create group container for each bar + label
+    const barAndLabel = svg
+        .selectAll("g")
+        .data(data)
+        .join("g")
+        .attr("transform", d => `translate(0, ${yScale(d.brand)})`);
+
+    // --- Bars ---
+    barAndLabel
+        .append("rect")
+        .attr("x", labelOffset)
+        .attr("y", 0)
+        .attr("width", d => xScale(d.count))
+        .attr("height", yScale.bandwidth())
+        .attr("fill", "green");
+
+    // --- Brand labels ---
+    barAndLabel
+        .append("text")
+        .text(d => d.brand)
+        .attr("x", labelOffset - 5)
+        .attr("y", yScale.bandwidth() / 2 + 5)
+        .attr("text-anchor", "end")
+        .style("font-family", "sans-serif")
+        .style("font-size", "12px");
+
+    // --- Count labels ---
+    barAndLabel
+        .append("text")
+        .text(d => d.count)
+        .attr("x", d => labelOffset + xScale(d.count) + 4)
+        .attr("y", yScale.bandwidth() / 2 + 5)
+        .style("font-family", "sans-serif")
+        .style("font-size", "12px");
 };
+
+
 // Function to show the selected page and hide others
 function showPage(pageName) {
     // Hide all pages
