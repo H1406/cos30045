@@ -7,6 +7,10 @@ const height = 500;
 const innerWidth = width - margin.left - margin.right;
 const innerHeight = height - margin.top - margin.bottom;
 
+let innerChartS;
+const tooltipWidth = 65;
+const tooltipHeight = 32;
+
 // =============================================
 // Colours
 // =============================================

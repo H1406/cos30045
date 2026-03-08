@@ -18,6 +18,9 @@ d3.csv("data/Ex6_TVdata.csv", d => ({
     // Draw the histogram
     drawHistogram(data);
 
+    //Draw the scatter plot
+    drawScatterPlot(data);
+
     // Set up the filter buttons
     populateFilters(data);
 });
