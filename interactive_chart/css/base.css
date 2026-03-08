@@ -1,0 +1,163 @@
+/* ===============================
+   Global Page Styling
+   =============================== */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f6f8;
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    background: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 24px 10px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+main {
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 24px 30px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+main h1 {
+    font-size: 1.3rem;
+    color: #2c3e50;
+    margin-top: 0;
+}
+
+main p {
+    color: #555;
+    margin-bottom: 16px;
+}
+
+/* ===============================
+   Filter Buttons
+   =============================== */
+
+#filters_screen {
+    margin-bottom: 20px;
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+#filters_screen button {
+    padding: 8px 20px;
+    border: 2px solid #d1d5db;
+    border-radius: 6px;
+    background: #f9fafb;
+    color: #555;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+#filters_screen button:hover {
+    background: #e5e7eb;
+    border-color: #9ca3af;
+}
+
+#filters_screen button.active {
+    background: #3b82f6;
+    color: white;
+    border-color: #3b82f6;
+}
+
+#filters_size {
+    margin-top: 20px;
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+#filters_size button {
+    padding: 8px 20px;
+    border: 2px solid #d1d5db;
+    border-radius: 6px;
+    background: #f9fafb;
+    color: #555;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+#filters_size button:hover {
+    background: #e5e7eb;
+    border-color: #9ca3af;
+}
+
+#filters_size button.active {
+    background: #d97706;
+    color: white;
+    border-color: #d97706;
+}
+
+/* ===============================
+   Footer
+   =============================== */
+
+footer {
+    text-align: center;
+    padding: 20px;
+    color: #888;
+    font-size: 13px;
+}
+
+/* ===============================
+   Data Source
+   =============================== */
+
+.body {
+    margin-top: 24px;
+    padding-top: 16px;
+    border-top: 1px solid #e5e7eb;
+}
+
+.body h3 {
+    font-size: 0.95rem;
+    color: #2c3e50;
+    margin-bottom: 4px;
+}
+
+.body a {
+    color: #3b82f6;
+    text-decoration: none;
+}
+
+.body a:hover {
+    text-decoration: underline;
+}
+
+/* ===============================
+   Tooltip
+   =============================== */
+
+.tooltip {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 6px 10px;
+    font-size: 12px;
+    border-radius: 4px;
+    pointer-events: none;
+}
